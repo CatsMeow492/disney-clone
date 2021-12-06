@@ -6,7 +6,7 @@ const Login = (props) => {
     <Container>
         <Content>
             <CTA>
-                <CTALogoOne src='/images/cta-logo-one.png' alt='' />
+                <CTALogoOne src='/images/cta-logo-one.svg' alt='' />
             </CTA>
             <BgImage />
         </Content>
@@ -51,15 +51,28 @@ const BgImage = styled.div`
 `;
 
 const CTA = styled.div`
-
+    margin-bottom: 2vw;
+    max-width: 650px;
+    width: 100%;
+    flex-wrap: wrap;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 0;
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+    transition-timing-function: eas-out;
+    transition: opacity 0.2s;
+    width: 100%;
 `;
 
 const CTALogoOne = styled.img`
-margin-bottom: 12px;
-max-width: 600px;
-min-height: 1px;
-display: block;
-width: 100%;
+    margin-bottom: 12px;
+    max-width: 600px;
+    min-height: 1px;
+    display: block;
+    width: 100%;
 `;
 
 export default Login;
