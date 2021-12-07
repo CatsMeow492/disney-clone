@@ -91,7 +91,7 @@ const CTALogoTwo = styled.img`
 const SignUp = styled.a`
     max-width: 600px;
     font-size: 18px;
-    font-weight: bold;
+    font-weight: 450px;
     color: #f9f9f9;
     background-color: #0063e5;
     margin-bottom: 20px;
