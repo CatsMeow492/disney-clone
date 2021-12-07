@@ -7,6 +7,10 @@ const Login = (props) => {
         <Content>
             <CTA>
                 <CTALogoOne src='/images/cta-logo-one.svg' alt='' />
+                <SignUp>GET THE DISNEY BUNDLE</SignUp>
+                <Terms>Stream now. <b><u>Terms Apply</u></b></Terms>
+                <CTALogoTwo src='/images/cta-logo-two.png' alt='' />
+                <CTAText>Sign up for Disney+ only</CTAText>
             </CTA>
             <BgImage />
         </Content>
@@ -73,6 +77,52 @@ const CTALogoOne = styled.img`
     min-height: 1px;
     display: block;
     width: 100%;
+`;
+
+const CTALogoTwo = styled.img`
+    max-width: 600px;
+    min-height: 1px;
+    display: block;
+    width: 100%;
+`
+
+const SignUp = styled.a`
+    max-width: 600px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #f9f9f9;
+    background-color: #0063e5;
+    margin-bottom: 20px;
+    margin-top: 12px;
+    width: 100%;
+    letter-spacing: 1.5px;
+    padding: 18.5px 24px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+
+    &:hover {
+        background-color: #0383ee;
+    }
+`;
+
+const Terms = styled.p`
+font-size: 11px;
+letter-spacing: .2px;
+color: silver;
+font-weight: 400;
+font-style: normal;
+margin: 0 0 24px;
+margin-bottom: 20px;
+display: flex-center;
+line-height 1.5;
+`;
+
+const CTAText = styled.h2`
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 26px;
+    line-spacing: .2px;
+    text-decoration: underline;
 `;
 
 export default Login;
