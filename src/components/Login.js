@@ -81,9 +81,11 @@ const CTALogoOne = styled.img`
 
 const CTALogoTwo = styled.img`
     max-width: 600px;
+    margin-bottom: 20px;
     min-height: 1px;
-    display: block;
+    display: inline-block;
     width: 100%;
+    vertical-align: bottom;
 `
 
 const SignUp = styled.a`
@@ -106,15 +108,15 @@ const SignUp = styled.a`
 `;
 
 const Terms = styled.p`
-font-size: 11px;
-letter-spacing: .2px;
-color: silver;
-font-weight: 400;
-font-style: normal;
-margin: 0 0 24px;
-margin-bottom: 20px;
-display: flex-center;
-line-height 1.5;
+    font-size: 11px;
+    letter-spacing: .2px;
+    color: silver;
+    font-weight: 400;
+    font-style: normal;
+    margin: 0 0 24px;
+    margin-bottom: 20px;
+    display: flex-center;
+    line-height 1.5;
 `;
 
 const CTAText = styled.h2`
