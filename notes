@@ -6,3 +6,5 @@ yarn start
 
 yarn add styled-components
 yarn add react-router-dom
+yarn add firebase
+yarn add firebase-tools
