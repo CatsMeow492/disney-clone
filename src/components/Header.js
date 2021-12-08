@@ -7,47 +7,31 @@ const Header = (props) => {
         <Logo src='/images/logo.svg' alt=''></Logo>
         <NavMenu>
             <a href='/home'>
-                <img src='/images/home-icon.svg' alt='HOME'>
-                </img>
-            <span>
-                        HOME
-            </span>
+                <img src='/images/home-icon.svg' alt='HOME' />
+            <span>HOME</span>
             </a>
-            <a href='/search'>
-                <img src='/images/search-icon.svg' alt='SEARCH'>
-                </img>
-            <span>
-                        SEARCH
-            </span>
+            <a>
+                <img src='/images/search-icon.svg' alt='SEARCH' />
+
+            <span>SEARCH</span>
             </a>
-            <a href='/watchlist'>
-                <img src='/images/watchlist-icon.svg' alt='WATCHLIST'>
-                </img>
-            <span>
-                        WATCHLIST
-            </span>
+            <a>
+                <img src='/images/watchlist-icon.svg' alt='WATCHLIST' />
+            <span>WATCHLIST</span>
             </a>
-            <a href='/original'>
-                <img src='/images/original-icon.svg' alt='ORIGINAL'>
-                </img>
-            <span>
-                        ORIGINAL
-            </span>
+            <a>
+                <img src='/images/original-icon.svg' alt='ORIGINAL' />
+            <span>ORIGINAL</span>
             </a>
-            <a href='/series'>
-                <img src='/images/series-icon.svg' alt='SERIES'>
-                </img>
-            <span>
-                        SERIES
-            </span>
+            <a>
+                <img src='/images/series-icon.svg' alt='SERIES' />
+                <span>SERIES</span>
             </a>
-            <a href='/movies'>
-                <img src='/images/movie-icon.svg' alt='MOVIES'>
-                </img>
-            <span>
-                        Movies
-            </span>
+            <a>
+                <img src='/images/movie-icon.svg' alt='MOVIES' />
+                <span>MOVIES</span>
             </a>
+            
         </NavMenu>
         <Login>Login</Login>
     </Nav>
@@ -101,51 +85,51 @@ const NavMenu = styled.div`
         display: flex;
         align-items: center;
         padding: 0 12px;
-    }
-
-    img {
-        height: 20px;
-        min-width: 20px;
-        width: 20px;
-        z-index: auto;
-    }
-
-    span {
-        color: rgb(249, 249, 249);
-        font-size: 13px;
-        letter-spacing: 1.42px;
-        line-height: 1.08;
-        padding: 2px 0px;
-        white-space: nowrap;
-        position: relative;
     
-        &:before {
-            content: "";
-            display: block;
-            background-color: rgb(249, 249, 249);
-            border-radius: 0px 0px 4px 4px;
-            bottom: -6px;
-            height: 2px;
-            left: 0;
-            opacity: 0;
-            position: absolute;
-            right: 0px;
-            transform-origin: left center;
-            transform: scaleX(0);
-            transition: all 250ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
-            visibility: hidden;
-            width: auto;
-        }
-    }
 
-    &:hover {
-        span:before {
-            transform: scaleX(1);
-            visibility: visible;
-            opacity: 1 !important;
+        img {
+            height: 20px;
+            min-width: 20px;
+            width: 20px;
+            z-index: auto;
         }
-    }
 
+        span {
+            color: rgb(249, 249, 249);
+            font-size: 13px;
+            letter-spacing: 1.42px;
+            line-height: 1.08;
+            padding: 2px 0px;
+            white-space: nowrap;
+            position: relative;
+        
+            &:before {
+                content: "";
+                display: block;
+                background-color: rgb(249, 249, 249);
+                border-radius: 0px 0px 4px 4px;
+                bottom: -6px;
+                height: 2px;
+                left: 0;
+                opacity: 0;
+                position: absolute;
+                right: 0px;
+                transform-origin: left center;
+                transform: scaleX(0);
+                transition: all 250ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
+                visibility: hidden;
+                width: auto;
+            }
+        }
+
+        &:hover {
+            span:before {
+                transform: scaleX(1);
+                visibility: visible;
+                opacity: 1 !important;
+            }
+        }
+        }
     // @media (max-width: 768px) {
     //     display: none;
     // }
