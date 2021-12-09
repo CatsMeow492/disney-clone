@@ -1,5 +1,5 @@
 https://www.youtube.com/watch?v=R_OERlafbmw&list=PL-J2q3Ga50oMQa1JdSJxYoZELwOJAXExP
-1h20m
+1h30m
 
 npx create-react-app disney-clone
 yarn start
@@ -8,3 +8,5 @@ yarn add styled-components
 yarn add react-router-dom
 yarn add firebase
 yarn add firebase-tools
+yarn add react-redux
+yarn add @reduxjs/toolkit

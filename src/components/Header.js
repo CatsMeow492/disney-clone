@@ -1,14 +1,19 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
+import { useDispatch, useSelector } from 'react-redux';
+import { useHistory } from "react-router-dom";
 import { auth, provider } from '../firebase';
+import { selectUserName, selectUserPhoto, setUserLoginDetails } from '../features/user/userSlice';
 
 const handleAuth = () => {
-    auth.signInWithRedirect(provider).then((result) => {
+    auth
+    .signInWithPopup(provider)
+    .then((result) => {
         console.log(result)
     }).catch((error) => {
         alert(error.message)
     })
 }
-
+    // test comment 
 const Header = (props) => {
     return ( 
     
