@@ -1,4 +1,13 @@
 import styled from 'styled-components'
+import { auth, provider } from '../firebase';
+
+const handleAuth = () => {
+    auth.signInWithPopup(provider).then((result) => {
+        console.log(result)
+    }).catch((error) => {
+        alert(error.message)
+    })
+}
 
 const Header = (props) => {
     return ( 
@@ -33,7 +42,7 @@ const Header = (props) => {
             </a>
             
         </NavMenu>
-        <Login>Login</Login>
+        <Login onClick={handleAuth}>Login</Login>
     </Nav>
     
     )
@@ -54,9 +63,11 @@ const Nav = styled.nav`
     transition: opacity 0.5s ease-out; 
     letter-spacing: 16px;
     z-index: 3;
+
 `;
 
 const Logo = styled.img`
+
     padding: 0;
     width: 80px;
     margin-top: 4;
@@ -67,9 +78,11 @@ const Logo = styled.img`
         display: block;
         width: 100%;
     }
+
 `;
 
 const NavMenu = styled.div`
+
     align-items: center;
     display: flex;
     flex-flow: row nowrap;
@@ -133,9 +146,11 @@ const NavMenu = styled.div`
     // @media (max-width: 768px) {
     //     display: none;
     // }
+
 `;
 
 const Login = styled.a`
+
     background-color: rgb(0, 0, 0, 0);
     border: 1px solid #f9f9f9;
     border-radius: 4px;

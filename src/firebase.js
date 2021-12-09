@@ -1,8 +1,10 @@
 // Import the functions you need from the SDKs you need
 
-import { initializeApp } from "firebase/app";
+import firebase from "firebase/compat/app"
+import "firebase/compat/auth"
+import "firebase/compat/firestore"
+import "firebase/compat/storage"
 
-import { getAnalytics } from "firebase/analytics";
 
 // TODO: Add SDKs for Firebase products that you want to use
 
@@ -26,7 +28,7 @@ const firebaseConfig = {
   messagingSenderId: "917977969560",
 
   appId: "1:917977969560:web:cfa82e40d4e1cc43b0f1ed",
-
+// eslint-disable-next-line
   measurementId: "${config.measurementId}"
 
 };
@@ -34,12 +36,11 @@ const firebaseConfig = {
 
 // Initialize Firebase
 
-const analytics = getAnalytics(app);
 const firebaseApp = firebase.initializeApp(firebaseConfig);
 const db = firebaseApp.firestore();
 const auth = firebase.auth();
 const provider = new firebase.auth.GoogleAuthProvider();
-const storage = firebase.storage();
+const storage = firebaseApp.storage();
 
-export  { auth, provider, storage };
+export  { auth, provider, storage};
 export default db;
