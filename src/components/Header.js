@@ -1,20 +1,26 @@
 import styled from 'styled-components';
 import { useDispatch, useSelector } from 'react-redux';
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";  // useHistory was updated to useNavigate
 import { auth, provider } from '../firebase';
 import { selectUserName, selectUserPhoto, setUserLoginDetails } from '../features/user/userSlice';
-
-const handleAuth = () => {
-    auth
-    .signInWithPopup(provider)
-    .then((result) => {
-        console.log(result)
-    }).catch((error) => {
-        alert(error.message)
-    })
-}
-    // test comment 
+ 
 const Header = (props) => {
+
+    const dispatch = useDispatch()
+    const history = useNavigate()  // we just defined history as useNavigate() instead of reinventing the wheel
+    const username = useSelector(selectUserName)
+    const userPhoto = useSelector(selectUserPhoto)
+
+    const handleAuth = () => {
+        auth
+        .signInWithPopup(provider)
+        .then((result) => {
+            console.log(result)
+        }).catch((error) => {
+            alert(error.message)
+        })
+    }
+
     return ( 
     
     <Nav>

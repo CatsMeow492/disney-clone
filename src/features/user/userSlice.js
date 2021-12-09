@@ -1,4 +1,4 @@
-import { createSlicer } from '@redux/toolkit';
+import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
     name: '',
