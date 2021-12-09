@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import { auth, provider } from '../firebase';
 
 const handleAuth = () => {
-    auth.signInWithPopup(provider).then((result) => {
+    auth.signInWithRedirect(provider).then((result) => {
         console.log(result)
     }).catch((error) => {
         alert(error.message)
