@@ -8,23 +8,40 @@ const Header = (props) => {
 
     const dispatch = useDispatch()
     const history = useNavigate()  // we just defined history as useNavigate() instead of reinventing the wheel
-    const username = useSelector(selectUserName)
+    const userName = useSelector(selectUserName)
     const userPhoto = useSelector(selectUserPhoto)
 
     const handleAuth = () => {
         auth
         .signInWithPopup(provider)
         .then((result) => {
-            console.log(result)
+            setUser(result.user);
         }).catch((error) => {
-            alert(error.message)
+            alert(error.message);
         })
-    }
+    };
+
+    const setUser = (user) => (
+        dispatch(
+            setUserLoginDetails({
+                name: user.displayName,
+                email: user.email,
+                photo: user.photoURL,
+            })) 
+    )
 
     return ( 
     
     <Nav>
+
         <Logo src='/images/logo.svg' alt=''></Logo>
+
+        {!userName ? 
+            <Login onClick={handleAuth}>Login</Login> 
+            :
+            <>
+        
+
         <NavMenu>
             <a href='/home'>
                 <img src='/images/home-icon.svg' alt='HOME' />
@@ -53,7 +70,9 @@ const Header = (props) => {
             </a>
             
         </NavMenu>
-        <Login onClick={handleAuth}>Login</Login>
+        <UserImg src={userPhoto} alt={userName} />
+        </>
+        }
     </Nav>
     
     )
@@ -175,6 +194,10 @@ const Login = styled.a`
         color: #000;
         border-color: transparent;
     }
+`;
+
+const UserImg = styled.img`
+    height: 100%;
 `;
 
 export default Header;
