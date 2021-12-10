@@ -1,3 +1,4 @@
+// eslint-disable-next-line 
 import { findByLabelText } from '@testing-library/dom';
 import styled from 'styled-components';
 
@@ -60,13 +61,13 @@ const CTA = styled.div`
     width: 100%;
     flex-wrap: wrap;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     margin-top: 0;
     text-align: center;
     margin-right: auto;
     margin-left: auto;
-    transition-timing-function: eas-out;
+    transition-timing-function: ease-out;
     transition: opacity 0.2s;
     width: 100%;
 `;

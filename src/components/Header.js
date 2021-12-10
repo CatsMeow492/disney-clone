@@ -1,10 +1,47 @@
-import styled from 'styled-components'
-
+import styled from 'styled-components';
+import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from "react-router-dom";  // useHistory was updated to useNavigate
+import { auth, provider } from '../firebase';
+import { selectUserName, selectUserPhoto, setUserLoginDetails } from '../features/user/userSlice';
+ 
 const Header = (props) => {
+
+    const dispatch = useDispatch()
+    const history = useNavigate()  // we just defined history as useNavigate() instead of reinventing the wheel
+    const userName = useSelector(selectUserName)
+    const userPhoto = useSelector(selectUserPhoto)
+
+    const handleAuth = () => {
+        auth
+        .signInWithPopup(provider)
+        .then((result) => {
+            setUser(result.user);
+        }).catch((error) => {
+            alert(error.message);
+        })
+    };
+
+    const setUser = (user) => (
+        dispatch(
+            setUserLoginDetails({
+                name: user.displayName,
+                email: user.email,
+                photo: user.photoURL,
+            })) 
+    )
+
     return ( 
     
     <Nav>
-        <Logo src='/images/logo.svg' alt=''></Logo>
+
+        <Logo src="/images/logo.svg" alt="Disney+" />
+
+        {!userName ? 
+            <Login onClick={handleAuth}>Login</Login> 
+            :
+            <>
+        
+
         <NavMenu>
             <a href='/home'>
                 <img src='/images/home-icon.svg' alt='HOME' />
@@ -33,43 +70,51 @@ const Header = (props) => {
             </a>
             
         </NavMenu>
-        <Login>Login</Login>
+        <UserImg src={userPhoto} alt={userName} />
+        </>
+        }
     </Nav>
     
     )
 }
 
 const Nav = styled.nav`
-    
+    position: fixed;
     top: 0;
     left: 0;
     right: 0;
     height: 70px;
-   
+    background-color: #090b13;
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     align-items: center;
     padding: 0 36px;
     transform: translateZ(0);
     transition: opacity 0.5s ease-out; 
     letter-spacing: 16px;
     z-index: 3;
+
 `;
 
 const Logo = styled.img`
+
+    display: inline-block;
     padding: 0;
     width: 80px;
-    margin-top: 4;
+    margin-top: 4px;
+    margin-right: 10;
     max-height: 70px;
     font-size: 0;
-    display: inline-block
+    
     img {
         display: block;
         width: 100%;
     }
+
 `;
 
 const NavMenu = styled.div`
+
     align-items: center;
     display: flex;
     flex-flow: row nowrap;
@@ -133,9 +178,11 @@ const NavMenu = styled.div`
     // @media (max-width: 768px) {
     //     display: none;
     // }
+
 `;
 
 const Login = styled.a`
+
     background-color: rgb(0, 0, 0, 0);
     border: 1px solid #f9f9f9;
     border-radius: 4px;
@@ -149,6 +196,10 @@ const Login = styled.a`
         color: #000;
         border-color: transparent;
     }
+`;
+
+const UserImg = styled.img`
+    height: 100%;
 `;
 
 export default Header;
