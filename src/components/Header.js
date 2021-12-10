@@ -1,4 +1,5 @@
-import styled from 'styled-components';
+import { useEffect } from 'react';
+import styled from 'styled-components';  // styled components are the cool components at the end where the css is surrounded by backticks
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from "react-router-dom";  // useHistory was updated to useNavigate
 import { auth, provider } from '../firebase';
@@ -7,9 +8,19 @@ import { selectUserName, selectUserPhoto, setUserLoginDetails } from '../feature
 const Header = (props) => {
 
     const dispatch = useDispatch()
-    const history = useNavigate()  // we just defined history as useNavigate() instead of reinventing the wheel
+    const navigate = useNavigate()  // navigate works a little differently than useHistory. It doesn't require .push method. /home can be directly passed to navigate as a parameter.
     const userName = useSelector(selectUserName)
     const userPhoto = useSelector(selectUserPhoto)
+
+    // If the user is logged in direct them to /home
+    useEffect(() => {
+        auth.onAuthStateChanged(async (user) => {
+            if(user) {
+                setUser(user);
+                navigate('/home');
+            }
+        });
+    },[userName]);
 
     const handleAuth = () => {
         auth
@@ -79,6 +90,7 @@ const Header = (props) => {
 }
 
 const Nav = styled.nav`
+
     position: fixed;
     top: 0;
     left: 0;
@@ -175,6 +187,7 @@ const NavMenu = styled.div`
             }
         }
         }
+
     // @media (max-width: 768px) {
     //     display: none;
     // }
@@ -196,10 +209,13 @@ const Login = styled.a`
         color: #000;
         border-color: transparent;
     }
+
 `;
 
 const UserImg = styled.img`
+
     height: 100%;
+
 `;
 
 export default Header;
