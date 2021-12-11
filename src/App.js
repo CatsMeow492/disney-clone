@@ -3,6 +3,7 @@ import Login from "./components/Login";
 import Header from './components/Header'
 import './App.css';
 import Home from './components/Home'
+require('dotenv').config()
 
 
 function App() {
