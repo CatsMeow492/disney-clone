@@ -17,7 +17,7 @@ import "firebase/compat/storage"
 
 const firebaseConfig = {
 
-  apiKey: "AIzaSyAaQ4sF4Sx8leQdKuKRnDnPd5qZw81llNA",
+  apiKey: 'AIzaSyAaQ4sF4Sx8leQdKuKRnDnPd5qZw81llNA',
 
   authDomain: "disneyplus-clone-f554f.firebaseapp.com",
 

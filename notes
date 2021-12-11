@@ -1,5 +1,5 @@
 https://www.youtube.com/watch?v=R_OERlafbmw&list=PL-J2q3Ga50oMQa1JdSJxYoZELwOJAXExP
-2h01m
+2h20m
 
 npx create-react-app disney-clone
 yarn start
@@ -10,3 +10,5 @@ yarn add firebase
 yarn add firebase-tools
 yarn add react-redux
 yarn add @reduxjs/toolkit
+yarn add react-slick
+yarn add slick-carousel
