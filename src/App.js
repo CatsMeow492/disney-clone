@@ -13,7 +13,7 @@ function App() {
       <Header />
         <Routes>
           <Route exact path='/' element={<Login />} />
-          <Route path='/home' />
+          <Route exact path='/Home' element={<Home />} />
         </Routes>
       </Router>
     </div>

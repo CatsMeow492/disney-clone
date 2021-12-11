@@ -32,6 +32,12 @@ const Container = styled.main`
         z-index: -1;
     }
 
+    ul li button {
+        &:before {
+            font-size: 10px;
+        }
+    }
+
 `;
 
 export default Home;
