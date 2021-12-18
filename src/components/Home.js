@@ -4,7 +4,6 @@ import Viewers from './Viewers';
 import Recommends from './Recommends';
 import NewDisney from './NewDisney';
 import Originals from './Originals';
-import Viewers from "./Viewers";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import db from "../firebase"; 
@@ -15,35 +14,45 @@ const Home = (props) => {
     const dispatch = useDispatch();
     const userName = useSelector(selectUserName);
     let recommends = [];
-    let newDisney = [];
+    let newDisneys = [];
     let originals = [];
     let trending = [];
-
+  
     useEffect(() => {
-        db.collection('movies').onSnapshot((snapshot) => {
-            snapshot.docs.map((doc) => {
-                switch(doc.data().type) {
-                    case 'recommend':
-                        recommends.push({id: doc.id, ...doc.data()})
-                        break;
-                    case 'new':
-                        newDisney.push({id: doc.id, ...doc.data()})
-                        break;
-                    case 'original':
-                        originals.push({id: doc.id, ...doc.data()})
-                        break;
-                    case 'trending':
-                        trending.push({id: doc.id, ...doc.data()})
-                        break;
-                })
-            });
+      console.log("hello");
+      db.collection("movies").onSnapshot((snapshot) => {
+        snapshot.docs.map((doc) => {
+          console.log(recommends);
+          // eslint-disable-next-line default-case
+          switch (doc.data().type) {
+            case "recommend":
+              recommends = [...recommends, { id: doc.id, ...doc.data() }];
+              break;
+  
+            case "new":
+              newDisneys = [...newDisneys, { id: doc.id, ...doc.data() }];
+              break;
+  
+            case "original":
+              originals = [...originals, { id: doc.id, ...doc.data() }];
+              break;
+  
+            case "trending":
+              trending = [...trending, { id: doc.id, ...doc.data() }];
+              break;
+          }
         });
-    });
-
-    dispatch(setMovies({
-        recommend: recommends,
-        newDisney: newDisney
-    }))
+  
+        dispatch(
+          setMovies({
+            recommend: recommends,
+            newDisney: newDisneys,
+            original: originals,
+            trending: trending,
+          })
+        );
+      });
+    }, [userName]);
 
     return (
     
