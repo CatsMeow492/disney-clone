@@ -1,36 +1,24 @@
 import styled from 'styled-components';
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { selectOriginal } from '../features/movie/movieSlice';
 
-const Originals = (props) => {
+const Recommends = (props) => {
+    const movies = useSelector(selectOriginal);
     return (
         <Container>
-            <h4>Recommended for You</h4>
+            <h4>New to Disney+</h4>
             <Content>
-
-                <Wrap>
-                    <Link to='/'>
-                        <img src='' alt='' />
-                    </Link>
-                </Wrap>
-
-                <Wrap>
-                    <Link to='/'>
-                        <img src='' alt='' />
-                    </Link>
-                </Wrap>
-
-                <Wrap>
-                    <Link to='/'>
-                        <img src='' alt='' />
-                    </Link>
-                </Wrap>
-
-                <Wrap>
-                    <Link to='/'>
-                        <img src='' alt='' />
-                    </Link>
-                </Wrap>
-
+                {
+                    movies && movies.map((movie, key) => (
+                        <Wrap key={key}>
+                            {movie.id}
+                            <Link to={'/detail/' + movie.id}>
+                                <img src={movie.cardImg} alt={movie.title} />
+                            </Link>
+                        </Wrap>
+                    ))
+                }            
             </Content>
         </Container>
     )
@@ -57,7 +45,7 @@ const Content = styled.div`
 
 const Wrap = styled.div`
 
-    padding-trop: 56.25%;
+    padding-top: 56.25%;
     border-radius: 10px;
     box-shadow: rgb(0 0 0 / 69%) 0px 26px 30px -10px,
         rgb(0 0 0 / 73%) 0px 16px 10px -10px;
@@ -74,7 +62,7 @@ const Wrap = styled.div`
         object-fit: cover;
         opacity: 1;
         position: absolute;
-        transition: opacity 500 ms ease-in-out 0s;
+        transition: opacity 500ms ease-in-out 0s;
         width: 100%;
         z-index: 1;
         top: 0;
@@ -89,5 +77,5 @@ const Wrap = styled.div`
     
 `;
 
-export default Originals;
+export default Recommends;
 
