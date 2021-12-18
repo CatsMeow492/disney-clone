@@ -70,4 +70,4 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 # disney-clone
 
-This clone is built with a react frontend and a nodejs + firebase + mongodb backend.
+This clone is built with a react-redux frontend and a nodejs backend + NoSQL database hosted on firebase.
