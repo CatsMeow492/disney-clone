@@ -3,7 +3,7 @@ import Login from "./components/Login";
 import Header from './components/Header'
 import './App.css';
 import Home from './components/Home';
-import detail from './components/Detail';
+import Detail from './components/Detail';
 
 require('dotenv').config()
 
@@ -16,7 +16,7 @@ function App() {
         <Routes>
           <Route exact path='/' element={<Login />} />
           <Route exact path='/Home' element={<Home />} />
-          <Route exact path='/detail/:id' element={<detail />} />
+          <Route exact path='/Detail/:id' element={<Detail />} />
         </Routes>
       </Router>
     </div>
