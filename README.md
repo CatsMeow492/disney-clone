@@ -1,3 +1,35 @@
+# Disney+ Clone
+
+Hi there,
+
+This is a clone of the Disney+ website. Complete with reactive login functionality and live content. I primarily built this project to experiment and deepen my understanding of `styled-components` and firebase. The app itself is built with React-Redux frontend on a NodeJS backend and features a firebase JSON (NoSQL) database.  Feel free to use it as a reference if you'd like to try to do a Disney+ clone yourself.  They make for great portfolio projects.
+
+# Getting Started
+
+To scaffold the project using npx:
+
+```
+npx create-react-app disney-clone
+```
+
+To add all of the dependencies:
+
+```
+yarn add styled-components
+yarn add react-router-dom
+yarn add firebase
+yarn add firebase-tools
+yarn add react-redux
+yarn add @reduxjs/toolkit
+yarn add react-slick
+yarn add slick-carousel
+```
+
+Finally, to compile and run a local instance:
+
+```
+yarn start
+```
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -68,6 +100,3 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `yarn build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-# disney-clone
-
-This clone is built with a react frontend and a nodejs + firebase + mongodb backend.
