@@ -21,6 +21,16 @@ const Detail = (props) => {
                         <img srx="/images/play-icon-white.png" alt="" />
                         <span>Trailer</span>
                     </Trailer>
+                    <AddList>
+                        <span>
+                    
+                        </span>
+                    </AddList>
+                    <GroupWatch>
+                        <div>
+                            <img src="/images/group-icon.png" alt="" />
+                        </div>
+                    </GroupWatch>
                 </Controls>
             </ContentMeta>
 
@@ -61,6 +71,7 @@ const Background = styled.div`
 `;
 
 const ImageTitle = styled.div`
+
     align-items: flex-end;
     display: flex;
     -webkit-box-pack: start;
@@ -76,21 +87,27 @@ const ImageTitle = styled.div`
         min-width: 200px;
         width: 35vw;
     }
+
 `;
 
 const ContentMeta = styled.div`
+
     max-width: 874px;
+
 `;
 
 const Controls = styled.div`
+
     align-items: center
     display: flex;
     flex-flow: row nowrap;
     margin: 24px 0px;
     min-height: 56px;
+
 `;
 
 const Player = styled.button`
+
     font-size: 15px;
     margin: 0px 22px 0px 0px;
     padding: 0px 24px;
@@ -129,8 +146,65 @@ const Player = styled.button`
 `;
 
 const Trailer = styled(Player)`
-background: rgba( 0, 0, 0, 0.3);
-border: 1px solid rgb( 249, 249, 249 );
+
+    background: rgba( 0, 0, 0, 0.3);
+    border: 1px solid rgb( 249, 249, 249 );
+
+`;
+
+const AddList = styled.div`
+
+    margin-right: 16px;
+    height: 44px;
+    width: 44px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba( 0, 0, 0, 0.6);
+    border-radius: 50%;
+    border: 2px solid white;
+    cursor: pointer;
+
+    span {
+        background-color: rgb(249, 249, 249);
+        display: inline-block;
+
+        &:first-child {
+            height: 2px;
+            transform: translate(1px, 0px) rotate(0deg);
+            width: 16px;
+        }
+
+        &:nth-child(2) {
+            height: 16px;
+            transform: translate(-8px) rotate(0deg);
+            width: 2px;
+        }
+    }
+
+`;
+
+const GroupWatch = styled.div`
+
+    height: 44px;
+    width: 44px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    bkacground: white;
+
+    div {
+        height: 40px;
+        width: 40px;
+        background; rgb(0, 0, 0);
+        border-radius: 50%;
+            img{
+                width: 100%;
+            }
+    }
+
 `;
 
 export default Detail;

@@ -2,7 +2,7 @@
 
 Hi there,
 
-This is a clone of the Disney+ website. Complete with reactive login functionality and live content. I primarily built this project to experiment and deepen my understanding of `styled-components` and firebase. The app itself is built with React-Redux frontend on a NodeJS backend and features a firebase JSON (NoSQL) database.  Feel free to use it as a reference if you'd like to try to do a Disney+ clone yourself.  They make for great portfolio projects.
+This is a clone of the Disney+ website. Complete with reactive login functionality and live content. I primarily built this project to experiment and deepen my understanding of `styled-components` and firebase. The app itself is built with a React-Redux frontend on a NodeJS backend and features a firebase JSON (NoSQL) database.  Feel free to use it as a reference if you'd like to try to do a Disney+ clone yourself.  They make for great portfolio projects.
 
 # Getting Started
 
